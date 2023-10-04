@@ -23,12 +23,12 @@ const Orgnavbar = () => {
           </Link>
         </li>
         <li>
-          <a
-            href="/payment" // Replace with actual links or React Router links
+          < Link
+            to="/help" // Replace with actual links or React Router links
             className="text-white hover:text-blue-200 mr-10"
           >
-            Payment
-          </a>
+            Help
+          </Link>
           <Link to='/' type='button' className='text-black p-1 bg-blue-500 p-1/2 rounded'>customer's view</Link>
         </li>
       </ul>
