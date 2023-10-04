@@ -1,7 +1,10 @@
 import React, { useEffect } from "react";
+import { Link } from "react-router-dom";
 import { TEInput, TERipple } from "tw-elements-react";
-
 export default function ExampleV2({n}){
+  function handlesubmit (){
+    console.log("baigan");
+}
   useEffect(() => {
     n(false);
   
@@ -32,22 +35,14 @@ export default function ExampleV2({n}){
                       </h4>
                     </div>
 
-                    <form>
+                    <form onClick={handlesubmit}>
                       <p className="mb-4">Please login to your account</p>
                       {/* <!--Username input--> */}
-                      <TEInput
-                        type="text"
-                        label="Username"
-                        className="mb-4"
-                      ></TEInput>
+                     <input type="text" placeholder="Username" className="w-full mb-4 border-2"></input>
 
                       {/* <!--Password input--> */}
-                      <TEInput
-                        type="password"
-                        label="Password"
-                        className="mb-4"
-                      ></TEInput>
-
+                      <input type="text" placeholder="Password" className="w-full mb-4 border-2"></input>
+                  
                       {/* <!--Submit button--> */}
                       <div className="mb-12 pb-1 pt-1 text-center">
                         <TERipple rippleColor="light" className="w-full">
@@ -71,12 +66,12 @@ export default function ExampleV2({n}){
                       <div className="flex items-center justify-between pb-6">
                         <p className="mb-0 mr-2">Don't have an account?</p>
                         <TERipple rippleColor="light">
-                          <button
-                            type="button"
+                          <Link 
+                         to="/register"
                             className="inline-block rounded border-2 border-danger px-6 pb-[6px] pt-2 text-xs font-medium uppercase leading-normal text-danger transition duration-150 ease-in-out hover:border-danger-600 hover:bg-neutral-500 hover:bg-opacity-10 hover:text-danger-600 focus:border-danger-600 focus:text-danger-600 focus:outline-none focus:ring-0 active:border-danger-700 active:text-danger-700 dark:hover:bg-neutral-100 dark:hover:bg-opacity-10"
                           >
                             Register
-                          </button>
+                          </Link>
                         </TERipple>
                       </div>
                     </form>

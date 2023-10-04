@@ -1,5 +1,6 @@
 import React , {useEffect} from "react";
 export default function Registration({n}) {
+   
     useEffect(() => {
         n(false);
       
@@ -18,7 +19,7 @@ export default function Registration({n}) {
                     </a>
                 </div>
                 <div className="w-full px-6 py-4 mt-6 overflow-hidden bg-white shadow-md sm:max-w-md sm:rounded-lg">
-                    <form>
+                    <form >
                         <div>
                             <label
                                 htmlFor="name"
