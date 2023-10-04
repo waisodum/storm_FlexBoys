@@ -1,5 +1,12 @@
-import React from "react";
-export default function Registration() {
+import React , {useEffect} from "react";
+export default function Registration({n}) {
+    useEffect(() => {
+        n(false);
+      
+        return () => {
+          n(true)
+        }
+      }, [])
     return (
         <div>
             <div className="flex flex-col items-center min-h-screen pt-6 sm:justify-center sm:pt-0 bg-gray-50">

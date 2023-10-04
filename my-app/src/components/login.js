@@ -1,7 +1,15 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { TEInput, TERipple } from "tw-elements-react";
 
-export default function ExampleV2(){
+export default function ExampleV2({n}){
+  useEffect(() => {
+    n(false);
+  
+    return () => {
+      n(true)
+    }
+  }, [])
+  
   return (
     <section className="h-full bg-neutral-200 dark:bg-neutral-700">
       <div className="container h-full p-10">
@@ -28,8 +36,8 @@ export default function ExampleV2(){
                       <p className="mb-4">Please login to your account</p>
                       {/* <!--Username input--> */}
                       <TEInput
-                        label="Username"
                         type="text"
+                        label="Username"
                         className="mb-4"
                       ></TEInput>
 
