@@ -30,7 +30,7 @@ const Navbar = (prop) => {
       <div className="flex md:order-2">
       
 
-      {/* {isAuthenticated ? (
+      {/* /* {isAuthenticated ? (
         <button
           onClick={() => logout({ returnTo: window.location.origin })}
           type="button"

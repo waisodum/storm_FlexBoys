@@ -6,6 +6,7 @@ import Navbar from './components/navbar';
 import Home from "./components/Home";
 import Registration from './components/register';
 
+import OrganisersHome from './pages/organisersHome';
 function App() {
 const [nav , setNav]=useState(true);
 
@@ -16,6 +17,8 @@ const [nav , setNav]=useState(true);
 <Route path='/' element={<Home/>}></Route>
 <Route path='/login' element={<ExampleV2 n={setNav}/>}  ></Route>
 <Route path='/register' element={<Registration n={setNav}/>}  ></Route>
+<Route path='/Product'  ></Route>
+<Route path='/orghome' element={<OrganisersHome n={setNav}/>}  ></Route>
 
   </Routes>
    </BrowserRouter>
