@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 
 try {
     
-    mongoose.connect("mongodb://127.0.0.1:27017/Uploads");
+  mongoose.connect("mongodb://127.0.0.1:27017/Uploads");
     const db = mongoose.connection;
     db.once("open", () => {
       console.log("connected to uploads");
@@ -14,9 +14,10 @@ try {
 
 
 const UploadSchema = new mongoose.Schema({
-  category:String,
-  name:String,
-  Desc:String
+  "id": Number,
+            "name": String,
+            "event": String,
+            "organizerName": String
 });
 
 const event = new mongoose.model("event", UploadSchema);
