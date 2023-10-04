@@ -43,6 +43,62 @@
 }
 
 
+.chatHide{
+  visibility: hidden;
+}
+
+.chatBotDiv{
+  width:10rem;
+height:100rem;
+  border-radius: 2rem;
+  position: absolute;
+
+
+}
+
+.chatHead{
+  height: 2rem;
+  width: 15rem;
+  background-color: aliceblue;
+}
+
+.chatContent{
+  padding: 1rem 2rem;
+
+
+}
+
+.chatImg{
+  border-radius: 50%;
+  width: 2rem;
+  heigth:2rem;
+}
+
+.palet{
+  display: flex;
+  width: 7rem;
+  height: auto;
+}
+
+.chatInfo{
+  width: 15rem;
+  height: max-content;
+  padding: 0.5rem;
+  font-size: .5rem
+}
+
+.chatRes{
+height: 3rem;
+width: 15rem;
+padding: 0.5rem;
+background-color: grey
+}
+
+.chatInput{
+  width:80% ;
+  height:90%;
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
