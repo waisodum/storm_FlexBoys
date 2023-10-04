@@ -19,8 +19,7 @@ const Orgnavbar = () => {
             to='/productupload' // Replace with actual links or React Router links
             className="text-white hover:text-blue-200 mr-5"
           >
-            Schedules
-          </Link>
+List Events          </Link>
         </li>
         <li>
           <a

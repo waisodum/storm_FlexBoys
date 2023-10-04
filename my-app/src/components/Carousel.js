@@ -7,9 +7,9 @@ const Carousel = () => {
  
   
   const slides = [
-    'https://admin.risingkashmir.com/Source/News/userfiles/image/s_637735968679573268_4_(8).jpg',
-    'https://i1.wp.com/khyenchyen.net/wp-content/uploads/2019/06/Kashmiri-saffron.jpg?fit=1500%2C1000&ssl=1&resize=460%2C249',
-    'https://www.tourmyindia.com/states/jammu-kashmir/image/houseboats-jk.jpg ',
+    '/imgs/EEVENT.jpeg',
+    '/imgs/high.png',
+    '/imgs/mu.jpg ',
   ];
 
   const handlePrevClick = () => {
@@ -34,7 +34,7 @@ const Carousel = () => {
   return (
     <div
       id="carouselExampleCrossfade"
-      className="relative h-screen"
+      className="relative h-max"
       data-te-carousel-init
       data-te-ride="carousel"
     >
@@ -53,7 +53,7 @@ const Carousel = () => {
             data-te-carousel-item
             data-te-carousel-active={index === currentIndex}
           >
-            <img src={slide} className="block w-full" alt={`Slide ${index + 1}`} />
+            <img src={slide} className="block bg-cove h-screen	w-full" alt={`Slide ${index + 1}`} />
           </div>
         ))}
       </div>
