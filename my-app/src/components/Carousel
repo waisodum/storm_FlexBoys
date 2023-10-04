@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 
 
-const Carousel = () => {
+const Carousel = (props) => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const slides = [
@@ -50,6 +50,7 @@ const Carousel = () => {
             data-te-carousel-item
             data-te-carousel-active={index === currentIndex}
           >
+            {props.children}
             <img src={slide} className="block w-full" alt={`Slide ${index + 1}`} />
           </div>
         ))}
