@@ -1,7 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from "framer-motion"
+import { Link } from 'react-router-dom';
+
 
 const Popular = () => {
+  
   const [scroll, setscroll] = useState(0);
 
   useEffect(() => {
@@ -117,14 +120,16 @@ const Popular = () => {
       </button>
       <div className="flex  space-x-4">
         {cardData.slice(currentIndex, currentIndex + visibleCards).map((card, index) => (
-           <motion.div
+          <Link to={`/events/${encodeURIComponent(card.productName)}`}>           <motion.div
            animate={{ y:scroll?index%2?scroll:scroll+2*index:null,
-            opacity:scroll?1:0
+            opacity:scroll?1:0,
+            zIndex:0
            }}
        
-           initial={{y:"-100vh",
-          opacity:0 }}
-           transition={{ duration: 1+0.5*index }}
+           initial={{y:"-300vh",
+          opacity:0 ,
+        zIndex:"-10000000000000000000000000"}}
+           transition={{ duration: 1+0.1*index }}
          >
           <div
             key={index}
@@ -139,6 +144,7 @@ const Popular = () => {
             <p className="text-white absolute z-30 -mt-[130px] text-center font-medium text-md border-sm border-black overflow-hidden w-52" style={{ textShadow: '2px 2px #000' }}>{card.description}</p>
           </div>
           </motion.div>
+          </Link>
 
         ))}
       </div>

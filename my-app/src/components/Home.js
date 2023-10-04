@@ -18,13 +18,13 @@ function Home() {
 
        
 
-<Popular/>
+<Popular />
 
 
 
 
 
-<Category/>
+
     </div>
   )
 }

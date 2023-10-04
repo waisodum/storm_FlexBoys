@@ -32,7 +32,7 @@ const EventUpload = () => {
     return budgetItems.reduce((total, item) => total + item.price, 0);
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async(e) => {
     e.preventDefault();
 
     // Create an object with the event data
@@ -43,6 +43,14 @@ const EventUpload = () => {
       budgetItems,
       eventImage,
     };
+
+//     await axios.post("http://localhost:80/upload",eventData, {
+//   headers: {
+//     'Content-Type': 'multipart/form-data',
+//   },
+// });
+
+
 
     // Reset the form fields by setting the state values to their initial state
     setEventName('');

@@ -4,7 +4,7 @@ import Typed from 'typed.js';
 const Cursor = () => {
   useEffect(() => {
     const options = {
-      strings: ['Birthday', 'Aniversary', 'Wedding', 'Festival'],
+      strings: ['Birthday', 'Anniversary', 'Wedding', 'Festival'],
       typeSpeed: 100,
       backSpeed: 100,
       loop: true,
