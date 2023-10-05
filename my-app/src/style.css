@@ -1,0 +1,106 @@
+@import url('https://fonts.googleapis.com/css2?family=nunito&display=swap');
+body{
+    padding: 0;
+    margin: 0%;
+}
+/* .nvbr{z-index: 3;
+    padding: 20px;
+    display: flex;
+    box-shadow: 0px 5px 4px gray;
+}
+#nav {
+    margin-left:auto;
+    display: flex;
+    list-style: none;
+}
+.navitems a { font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    padding: 20px;
+font-size: 110%;
+border-bottom:2px solid transparent ;
+     color: black;
+    text-decoration: none;
+    transition: border-color 0.3s ease; 
+}
+.navitems a:hover{
+    border-color:purple ;
+}
+.nvbr img{
+    margin-left:22px;
+} */
+
+
+
+.desc{ padding: 34px;
+    height: 40vh;
+    background-color: #f7c752;
+    font-family: 'nunito', sans-serif;
+}
+.desc p{
+
+    width: 40%;
+}
+.title{
+    width: 45%;
+    font-family: 'nunito', sans-serif;
+    font-size: 220%;
+    font-weight: 900;
+}
+
+
+
+
+.hoverbox{
+     position: absolute;
+    top: 21vh;
+    right: 2rem;
+width: 30%;
+z-index: 3;
+height: 70vh;
+/* background-color: aliceblue; */
+}
+.c{ width: 50vw;
+    /* border: 2px solid black; */
+    margin: 34px;
+    font-family: 'nunito', sans-serif;
+    padding: 20px; 
+    position: relative;
+    overflow: hidden;
+}
+
+
+
+.hoverbox img{ 
+border: 1px solid black;
+    height: 46%;
+    display: block;
+    margin:3px auto;
+}
+.fixed img{ 
+    border: 1px solid black;
+        height: 46%;
+        display: block;
+        margin:3px auto;
+    }
+
+
+
+
+.less{ color: purple;
+    font-weight: 500;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+height: 20px;
+width :200px;
+}
+.enroll{ 
+    font-family: 'nunito', sans-serif;
+    margin: 15px auto;
+    background-color: #f7c752;
+    width: 77%;
+    font-size: 200%;
+    text-align: center;
+    border: 2px solid black;
+
+}
+

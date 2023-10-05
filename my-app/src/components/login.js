@@ -31,7 +31,7 @@ export default function ExampleV2({n}){
                         alt="logo"
                       />
                       <h4 className="mb-12 mt-1 pb-1 text-xl font-semibold">
-                        We are The Lotus Team
+                        We are The Planit Team
                       </h4>
                     </div>
 

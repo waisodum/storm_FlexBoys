@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 
-const Navbar = (prop) => {
+const Navbar = () => {
   const [navbarColor, setNavbarColor] = useState('transparent');
 
   useEffect(() => {
@@ -9,7 +9,7 @@ const Navbar = (prop) => {
       if (window.scrollY > 50) {
         setNavbarColor('black'); // Change the background color to black
       } else {
-        setNavbarColor('transparent'); // Change it back to transparent
+        setNavbarColor('black'); // Change it back to transparent
       }
     };
     window.addEventListener('scroll', handleScroll);
@@ -26,11 +26,11 @@ const Navbar = (prop) => {
       className="fixed w-full top-0 left-0 border-gray-200 dark:border-gray-600 z-50"
     >
       <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
-      <Link to="/" className="block py-2 pl-3 pr-4 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-00 md:p-0 md:dark:text-blue-500" aria-current="page">J&K Treasures</Link>
+      <Link to="/" className="block py-2 pl-3 pr-4  text-white bg-blue-700 rounded md:bg-transparent md:text-blue-00 md:p-0 md:dark:text-blue-500" aria-current="page"><img src="/imgs/lotus.webp" alt="" style={{width:"5rem",height:"auto"}}/></Link>
       <div className="flex md:order-2">
       
 
-      {/* {isAuthenticated ? (
+      {/* /* {isAuthenticated ? (
         <button
           onClick={() => logout({ returnTo: window.location.origin })}
           type="button"
@@ -64,19 +64,19 @@ const Navbar = (prop) => {
               <Link to="/About" className="block py-2 pl-3 pr-4 text-white rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-white md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">About</Link>
             </li>
             <li>
-              <Link to="/Product" className="block py-2 pl-3 pr-4 text-white rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-white md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Products</Link>
+              <Link to="/eventOrganizers" className="block py-2 pl-3 pr-4 text-white rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-white md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">EventOrganizers</Link>
             </li>
             <li>
             <Link
-                to="/Blog"
+                to="/Booking"
                 className="block py-2 pl-3 pr-4 text-white rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-white md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover-bg-gray-700 dark:hover:text-white md:dark:hover-bg-transparent dark:border-gray-700"
                 
               >
-                Blog
+                Bookings
               </Link>
               </li>
             <li>
-              <Link to="/Job" className="block py-2 pl-3 pr-4 text-white rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-white md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Delivery job</Link>
+              <Link to="/chatBot" className="block py-2 pl-3 pr-4 text-white rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-white md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">ChatBot</Link>
             </li>
           </ul>
         </div>
