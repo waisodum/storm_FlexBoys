@@ -1,46 +1,29 @@
-var createError = require('http-errors');
-var express = require('express');
-var path = require('path');
-var cookieParser = require('cookie-parser');
-var logger = require('morgan');
-var cors = require('cors')
-var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
+const express = require("express");
+const app = express();
+const dotenv = require("dotenv");
+const DbConnect = require("./database.js");
+const errorMiddleware = require("./middleware/error");
+const cookieParser = require("cookie-parser");
 
-var app = express();
-const corsconfig={
-  origin: '*', 
-  methods: 'GET,HEAD,PUT,PATCH,POST,DELETE', 
-  allowedHeaders: 'Origin,X-Requested-With,Content-Type,Accept,Authorization',
-  preflightContinue: false, 
-  optionsSuccessStatus: 204, 
-};
-app.use(cors(corsconfig))
-app.use(logger('dev'));
-app.use(express.json());
-app.use(express.urlencoded({ extended: false }));
-app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'public')));
+dotenv.config();
+DbConnect()
+app.use(express.json())
+app.use(cookieParser())
 
-app.use('/', indexRouter);
-app.use('/users', usersRouter);
 
-// catch 404 and forward to error handler
-app.use(function(req, res, next) {
-  next(createError(404));
-});
-// error handler
+const PORT = process.env.PORT;
 
-app.use(function(err, req, res, next) {
-  // set locals, only providing error in development
-  res.locals.message = err.message;
-  res.locals.error = req.app.get('env') === 'development' ? err : {};
+// routing
 
-  // render the error page
-  res.status(err.status || 500);
-  res.render('error');
-});
-app.listen(80,()=>{
-  console.log("salman");
+const user = require("./routes/userRoute");
+
+app.use("/api/v1",user);
+
+app.get("/",(req,res)=>{
+    res.send("hello")
 })
-module.exports = app;
+
+const server = app.listen(PORT,()=>{
+    console.log(`listening at port ${PORT}`)
+})
+
