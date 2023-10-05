@@ -64,7 +64,7 @@ var data = [{category
         </div>
 
     </div>
-  )
+  );
 }
 
-export default LandingPage
+export default LandingPage;

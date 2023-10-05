@@ -9,10 +9,13 @@ import OrganisersHome from './pages/organisersHome';
 import Events from './components/events';
 import LandingPage from './components/landingPage';
 import About from './pages/About';
+import Footer from './components/Footer';
+import EventOrganizer from './components/EventOrganizer';
+import Chat from './components/Chat';
 function App() {
 const [nav , setNav]=useState(true);
 const [eve,setEve]=useState(null);
-  return (
+  return (<>
     <BrowserRouter>
   {nav?<Navbar/>:null}
   <Routes>
@@ -24,9 +27,14 @@ const [eve,setEve]=useState(null);
 <Route path='/events/:eventName' element={<Events />}  ></Route>
 <Route path='/land/:id' element={<LandingPage/>}  ></Route>
 <Route path='/About' element={<About/>}  ></Route>
+<Route path='/booking' element={<LandingPage/>}  ></Route>
+<Route path='/eventOrganizers' element={<EventOrganizer/>}  ></Route>
+<Route path='/chatBot' element={<Chat/>}  ></Route>
 
   </Routes>
    </BrowserRouter>
+   <Footer/>
+   </>
   );
 }
 

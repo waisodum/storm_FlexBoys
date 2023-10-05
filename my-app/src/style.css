@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Lunasima&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=nunito&display=swap');
 body{
     padding: 0;
     margin: 0%;
@@ -33,7 +33,7 @@ border-bottom:2px solid transparent ;
 .desc{ padding: 71px;
     height: 40vh;
     background-color: #f7c752;
-    font-family: 'Lunasima', sans-serif;
+    font-family: 'nunito', sans-serif;
 }
 .desc p{
 
@@ -41,7 +41,7 @@ border-bottom:2px solid transparent ;
 }
 .title{
     width: 45%;
-    font-family: 'Lunasima', sans-serif;
+    font-family: 'nunito', sans-serif;
     font-size: 220%;
     font-weight: 900;
 }
@@ -52,25 +52,22 @@ border-bottom:2px solid transparent ;
 .hoverbox{
      position: absolute;
     top: 21vh;
-    border: 2px solid black;
-    margin-left: 59%;
+    right: 2rem;
 width: 30%;
 z-index: 3;
 height: 70vh;
-background-color: aliceblue;
+/* background-color: aliceblue; */
 }
 .c{ width: 50vw;
-    border: 2px solid black;
+    /* border: 2px solid black; */
     margin: 34px;
-    font-family: 'Lunasima', sans-serif;
+    font-family: 'nunito', sans-serif;
     padding: 20px; 
     position: relative;
     overflow: hidden;
 }
 
-.h{
-    height: 60vh;
-}
+
 
 .hoverbox img{ 
 border: 1px solid black;
@@ -97,7 +94,7 @@ height: 20px;
 width :200px;
 }
 .enroll{ 
-    font-family: 'Lunasima', sans-serif;
+    font-family: 'nunito', sans-serif;
     margin: 15px auto;
     background-color: #f7c752;
     width: 77%;
@@ -106,3 +103,4 @@ width :200px;
     border: 2px solid black;
 
 }
+
