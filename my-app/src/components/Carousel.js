@@ -34,7 +34,7 @@ const Carousel = () => {
   return (
     <div
       id="carouselExampleCrossfade"
-      className="relative h-max"
+      className="relative h-screen "
       data-te-carousel-init
       data-te-ride="carousel"
     >
@@ -42,11 +42,11 @@ const Carousel = () => {
 
 
       {/* Carousel items */}
-      <div className="relative w-full overflow-hidden after:clear-both after:block after:content-[''] h-[650px] ">
+      <div className="relative w-full overflow-hidden after:clear-both after:block after:content-[''] h-screen ">
         {slides.map((slide, index) => (   
           <div
             key={index}
-            className={`relative float-left -mr-[100%] w-full  opacity-0 transition-opacity duration-[300ms] ease-in-out motion-reduce:transition-none ${
+            className={`relative float-left -mr-[100%] w-full h-full opacity-0 transition-opacity duration-[300ms] ease-in-out motion-reduce:transition-none ${
               index === currentIndex ? 'opacity-100 ' : ''
             }`}
             data-te-carousel-fade

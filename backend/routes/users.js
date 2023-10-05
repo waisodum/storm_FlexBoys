@@ -1,9 +1,19 @@
 var express = require('express');
 var router = express.Router();
-const UpLoad=require("../models/users")
+const UpLoad=require("../models/eventlist")
 /* GET users listing. */
-router.get('/', function(req, res, next) {
-  res.send('respond with a resource');
+router.get('/', async function(req, res, next) {
+
+  var all=await UpLoad.find()
+  res.json(all);
+
+
+});router.get('/index', async function(req, res, next) {
+
+  var all=await UpLoad.find()
+  res.json(all);
+
+
 });
 
 module.exports = router;

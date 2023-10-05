@@ -8,6 +8,7 @@ import Registration from './components/register';
 import OrganisersHome from './pages/organisersHome';
 import Events from './components/events';
 import LandingPage from './components/landingPage';
+import About from './pages/About';
 function App() {
 const [nav , setNav]=useState(true);
 const [eve,setEve]=useState(null);
@@ -21,7 +22,8 @@ const [eve,setEve]=useState(null);
 <Route path='/Product'></Route>
 <Route path='/orghome' element={<OrganisersHome n={setNav}/>}  ></Route>
 <Route path='/events/:eventName' element={<Events />}  ></Route>
-<Route path='/parent' element={<LandingPage/>}  ></Route>
+<Route path='/land/:id' element={<LandingPage/>}  ></Route>
+<Route path='/About' element={<About/>}  ></Route>
 
   </Routes>
    </BrowserRouter>

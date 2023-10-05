@@ -1,11 +1,42 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import '../style.css'
+import { Link, useParams } from 'react-router-dom';
 function LandingPage() {
-  return (
-    <div>
+
+    const {id} = useParams();
+    // useEffect( async () => {
+ 
+    //   fetch('http://localhost:80/').then((y)=>{
+    //       return y.json()
+    //     })
+    //     .then((x)=>{
+    //   setdata(x);
+    //   })
+        
+    //   }, []);
+         
+var data = [{category
+    : 
+    "Wedding",
+    desc
+    : 
+    "These organizers are not just coordinators; they are dream weavers and problem solvers. They possess an uncanny ability to anticipate challenges before they arise, ensuring that the day unfolds smoothly. They are experts in managing a multitude of moving parts - from selecting the perfect venue to curating a sumptuous menu, from coordinating floral arrangements to choreographing the first dance. Their role goes beyond logistics; they are emotional support for the couple, calming nerves and offering a reassuring presence amidst the whirlwind of emotions.\r\n\r\nCreativity is their canvas, and every wedding is a unique masterpiece. They have an innate sense of style, curating aesthetics that align with the couple's vision, be it a grand and opulent affair or an intimate, rustic celebration. They weave in personal touches that make the event truly one-of-a-kind, ensuring that guests are left with lasting memories.",
+    eventName
+    : 
+    "Wedding",
+    path
+    : 
+    "1696467828244-music.jpeg",
+    __v
+    :0,
+    _id:"651e0b74d618eaa41f78eac7"}]
+
+            var newData=data.filter((x)=>x._id==id);
+    return (
+    <div >
 
 <div class="desc">
-        <div class="title">Public Speaking: Introduction to interviewing</div>
+        <div class="title">{newData[0].eventName}</div>
         <p>In this masterclass, students will learn the basics of interviewing and how to present themselves confidently. </p>
         <p><b>Date:</b> July 29, 2023</p>
         <p><b>Time:</b> 12:30 PM - 1:45 PM ET
@@ -13,74 +44,24 @@ function LandingPage() {
         </p>
     </div>
         <div class="hoverbox hover">
-            <img src="../static/img/Supercharged Summer - Masterclass (6).webp" alt="hello"/>
-            <div class="enroll">ENROLL NOW</div>
+            <img src={`/imgs/${newData[0].path}`} alt="hello"/>
+
+
+
+
+<Link to="/salman">
+
+<div class="enroll">Book Now</div>
+</Link>            
+
+
         </div>
         <div class="c h">
 
-<h1> Course overview</h1>
-<p>The "Mastering the Art of Public Speaking" course aims to equip participants with the essential skills and techniques necessary to deliver impactful and engaging speeches confidently. Whether you are a student, professional, or an aspiring public speaker, this course will help you build the foundation for successful public speaking.
-</p>
-<h1> Course Objectives:</h1>
-<ol>
-    <li>Understand the Importance of Public Speaking: Explore the significance of public speaking in various personal and professional contexts and its potential to influence and inspire others.
-
-    </li>
-    <li>Overcoming Stage Fright: Identify common public speaking fears and develop strategies to overcome nervousness and build self-confidence on stage.
-
-    </li>
-    <li>
-        Crafting Compelling Speeches: Learn the art of structuring speeches effectively to capture the audience's attention, deliver a clear message, and leave a lasting impact.
-
-
-    </li>
-    <li> 
-        Vocal Delivery: Enhance vocal techniques, such as tone, pitch, volume, and pacing, to convey emotions and maintain audience engagement.
-
-
-    </li>
-    <li>
-        Non-Verbal Communication: Understand the impact of body language, gestures, and facial expressions in reinforcing your message and connecting with the audience.
-
-
-    </li>
-    <li>
-        Storytelling Techniques: Explore the power of storytelling to make your speeches more relatable, memorable, and emotionally resonant.
-
-
-    </li>
-    <li>Engaging with the Audience: Discover methods to establish a connection with the audience, involve them in your speech, and handle Q&A sessions effectively.
-
-    </li>
-    <li>Using Visual Aids: Learn how to integrate visual aids, such as slides or props, to enhance your presentations without overshadowing your message.
-
-    </li>
-    <li>Adapting to Different Audiences: Understand the importance of tailoring your speech to suit diverse audiences and occasions.
-
-    </li>
-    <li>Impromptu Speaking: Develop the ability to think quickly on your feet and deliver coherent and persuasive impromptu speeches.
-
-    </li>
-    <li>Handling Difficult Situations: Gain strategies to manage unexpected challenges, interruptions, or hostile questions during a speech.
-
-    </li>
-    <li>Effective Rehearsing Techniques: Learn how to practice and refine your speeches to ensure a polished and confident delivery.
-
-    </li>
-</ol>
-
-<div class="less">More</div>
-
+<h1> Event Overview </h1>
+<p>{newData[0].desc}</p>
 
         </div>
-
-        
-        
-        
-        
-        
-
-
 
     </div>
   )

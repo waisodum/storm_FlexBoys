@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
-
+import axios from 'axios'
 const EventUpload = () => {
   const [theme, setTheme] = useState('Basic');
   const [eventName, setEventName] = useState('');
   const [eventDescription, setEventDescription] = useState('');
+  const [eventcat, setEventCat] = useState('');
   const [budgetItems, setBudgetItems] = useState([]);
   const [itemDescription, setItemDescription] = useState('');
   const [itemPrice, setItemPrice] = useState('');
@@ -27,7 +28,7 @@ const EventUpload = () => {
       setItemPrice('');
     }
   };
-
+ 
   const calculateTotalBudget = () => {
     return budgetItems.reduce((total, item) => total + item.price, 0);
   };
@@ -37,18 +38,19 @@ const EventUpload = () => {
 
     // Create an object with the event data
     const eventData = {
-      eventName,
-      eventDescription,
-      theme,
-      budgetItems,
-      eventImage,
+      eventName:eventName,
+      eventDescription:eventDescription,
+category:eventcat,
+      theme:theme,
+      budgetItems:budgetItems,
+      eventImage:eventImage,
     };
 
-//     await axios.post("http://localhost:80/upload",eventData, {
-//   headers: {
-//     'Content-Type': 'multipart/form-data',
-//   },
-// });
+     await axios.post("http://localhost:80/",eventData, {
+   headers: {
+     'Content-Type': 'multipart/form-data',
+   },
+ });
 
 
 
@@ -73,7 +75,8 @@ const EventUpload = () => {
           Event Theme
         </label>
         <select
-          id="theme"
+          id="theme" 
+          required
           className="border rounded w-full py-2 px-3 text-lg"
           value={theme}
           onChange={(e) => handleThemeChange(e.target.value)}
@@ -93,17 +96,32 @@ const EventUpload = () => {
           </label>
           <input
             type="text"
+          required
+
             id="eventName"
             className="border rounded w-full py-2 px-3 text-lg"
             value={eventName}
             onChange={(e) => setEventName(e.target.value)}
-          />
+          /> 
+          <label htmlFor="eventName" className="block text-white text-lg">
+            Event Category
+          </label><input
+          type="text"
+        required
+
+          id="eventName"
+          className="border rounded w-full py-2 px-3 text-lg"
+          value={eventcat}
+          onChange={(e) => setEventCat(e.target.value)}
+        />
         </div>
         <div className="mb-4">
           <label htmlFor="eventDescription" className="block text-white text-lg">
             Event Description
           </label>
           <textarea
+          required
+
             id="eventDescription"
             className="border rounded w-full py-2 px-3 text-lg"
             value={eventDescription}
@@ -115,9 +133,11 @@ const EventUpload = () => {
             Event Image
           </label>
           <input
+          required
+
             type="file"
             id="eventImage"
-            className="border rounded w-full py-2 px-3 text-lg"
+            name="eventImage"            className="border rounded w-full py-2 px-3 text-lg"
             accept="image/*"
             onChange={(e) => setEventImage(e.target.files[0])}
           />
@@ -144,6 +164,7 @@ const EventUpload = () => {
           </div>
           <button
             type="button"
+          
             onClick={handleAddItem}
             className="bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600 text-lg"
           >
