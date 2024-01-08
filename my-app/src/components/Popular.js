@@ -120,7 +120,8 @@ const Popular = () => {
       </button>
       <div className="flex  space-x-4">
         {cardData.slice(currentIndex, currentIndex + visibleCards).map((card, index) => (
-          <Link to={`/events/${encodeURIComponent(card.productName)}`}>           <motion.div
+          <Link to={`/events/${encodeURIComponent(card.productName)}`}>     
+          <motion.div
            animate={{ y:scroll?index%2?scroll:scroll+2*index:null,
             opacity:scroll?1:0,
             zIndex:0

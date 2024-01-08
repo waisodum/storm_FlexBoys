@@ -5,12 +5,13 @@ import axios from "axios"
 const Chat = () => {
     const [userData,setUserData] = useState("");
     const [resData,setResData] = useState("");
+    const [t,sett] = useState(false);
 
 
     const getdata = () => {
         axios
           .get(
-            `http://localhost:4000/?question=Hello data:[
+            `http://localhost:4000/?question=Hello%40data:[
                 {
                   name: "Elegant Events",
                   eventsHandled: ["Weddings", "Corporate Conferences", "Galas"],
@@ -138,10 +139,10 @@ const Chat = () => {
           .then((res) => {
             setResData(res.data);
             console.log(res.data);
-          });
+          }).catch((e)=>{setResData("sorry the server is down")}) ;
       };
 
-      const chatArray = ["I'm your AI-powered smart chatbot here to assist you.",]
+      const chatArray = ["I'm your AI-powered smart chatbot here to assist you."]
   return (
     <>
     <div className="" style={{backgroundColor:"#000",color:"#fff",fontSize:"2rem",fontWeight:"800",padding:"2rem"}}>

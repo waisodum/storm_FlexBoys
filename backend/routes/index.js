@@ -12,23 +12,18 @@ router.post('/',upload.single('eventImage'),async(req,res,next)=>{
  path: req.file.filename,
    }
 
-console.log(req.body);
 // console.log(data);
- await model(data).save().then(()=>{
-  res.status(200).json({status:"success"})
- })
-console.log(req.file.filename);
-// console.log(req.file);
+try {
+  
+  await model(data).save().then(()=>{
+   res.status(200).json({status:"success"})
+  })
+} catch (error) {
+ console.log("error"); 
+}
 
 
   })
 
-  router.get('/', async function(req, res, next) {
-
-    var all=await UpLoad.find()
-    res.json(all);
-  
-  
-  });
 
 module.exports=router

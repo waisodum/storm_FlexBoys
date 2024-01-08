@@ -1,5 +1,4 @@
 import React from 'react'
-
 const Card = ({image,name,a}) => {
   return (
     <div class="w-1/4 p-4">

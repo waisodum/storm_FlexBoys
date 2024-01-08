@@ -8,7 +8,7 @@ const Orgnavbar = () => {
       <ul className="flex space-x-4">
         <li>
           <Link
-            to='/SellerHome' // Replace with actual links or React Router links
+            to='/orghome' // Replace with actual links or React Router links
             className="text-white hover:text-blue-200 mr-5"
           >
             Home
@@ -16,7 +16,7 @@ const Orgnavbar = () => {
         </li>
         <li>
           <Link
-            to='/productupload' // Replace with actual links or React Router links
+            to='/help' // Replace with actual links or React Router links
             className="text-white hover:text-blue-200 mr-5"
           >
 List Events          </Link>

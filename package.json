@@ -1,0 +1,15 @@
+{
+  "name": "storm_flexboys",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "frontend": "cd my-app && npm start",
+    "backend": "cd backend && npm start"
+
+  }
+  ,
+  
+  "author": "",
+  "license": "ISC"
+}
